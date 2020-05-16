@@ -29,13 +29,14 @@ $("#ktgbtn_simpan").click(function(event) {
 		ktg_nama.focus();
 	}else{
 		$.ajax({
-			url:url+'Kategori/cktg_insert',
+			url:url+'Kategori/insert',
 			type:"post",
 			data:frm_kategori,
 			cache:true,
 			success:function(html){
 				alert('success!!');
 				$(".clean").val('');
+				location.reload();
 			}
 		});
 	}
@@ -64,12 +65,32 @@ $('#ktg_table').dataTable({
         },
         ],
  
-    });
+	});
+	
+
+	$("#ktg_save_edit").click(function(event){
+			frm_kategori_edit=$('#frm_kategori_edit').serialize();
+			console.log(frm_kategori_edit);
+			ktg_id_edit=$("#ktg_id_edit").val();
+
+			$.ajax({
+				url:url+'Kategori/update/'+ktg_id_edit,
+				type:"post",
+				data:frm_kategori_edit,
+				cache:true,
+				success:function(html){
+					alert('success!!');
+					$(".clean").val('');
+					location.reload();
+				}
+			});
+	});	
 
 
 });//clode tag jquery
 
-function ktg_delete(id){
+// ==================function menu kategori
+	function ktg_delete(id){
 		confirm=confirm('Anda Yakin Hapus Data ini??');
 		if(confirm==true){
 			var url=$('#url').attr('href');
@@ -78,18 +99,37 @@ function ktg_delete(id){
 				type: 'POST',
 				dataType: 'JSON',
 				success:function(html){
-					alert(html);
-					reload_table();
+					// alert(html);
+					location.reload();
+					// reload_table();
 				}
 			})
 
 		}
-		
-		
-		
 	}
 
-function reload_table(){
-	ktg_table=$('#ktg_table').dataTable();
-	ktg_table.ajax.reload(null,false);
-}
+	function ktg_edit(id){
+			alert(id);
+			$("#ktg_id_edit").val(id);
+			var url=$('#url').attr('href');
+			$.ajax({
+				url: url+'kategori/update_view/'+id,
+				type: 'POST',
+				dataType: 'JSON',
+				success:function(html){
+					console.log(html);
+					$("#exampleModal").modal('show');
+					$("#ktg_nama_edit").val(html[0].ktg_nama);
+					$("#ktg_ket_edit").val(html[0].ktg_ket);
+					
+				}
+			})
+	}
+
+
+// ==========================
+
+	function reload_table(){
+		ktg_table=$('#ktg_table').dataTable();
+		ktg_table.ajax.reload(null,false);
+	}

@@ -12,10 +12,11 @@ class Kategori extends CI_Controller {
 	public function index()
 	{
 		$data['page']='kategori';
-		$this->load->view('home', $data);		
+		$this->load->view('home', $data);	
+		
 	}
 
-	public function cktg_insert(){
+	public function insert(){
 		$data = [
 			'ktg_id'=>'',
 		    'ktg_nama' =>$this->input->post('ktg_nama'),
@@ -23,8 +24,16 @@ class Kategori extends CI_Controller {
 
 		];
 
-		$data=$this->m_kategori->mktg_insert($data);
+		$data=$this->m_kategori->insert($data);
 		echo json_encode($data);
+	}
+
+	public function view(){
+		$data['kategori']=$this->m_kategori->getAll();
+		$this->load->view('kategori',$data);
+		
+		// echo json_encode($data);
+		
 	}
 
 	// public function cktg_select(){
@@ -43,7 +52,8 @@ class Kategori extends CI_Controller {
             $row[] = $no;
             $row[] = $kategori->ktg_nama;
             $row[] = $kategori->ktg_ket;
-            $row[] = '<a href="javascript:void(0)"  name="delete" onclick="ktg_delete('.$kategori->ktg_id.')"  id="'.$kategori->ktg_id.'" class=" btn btn-danger btn-xs update"> Delete </a>';
+			$row[] = '<a href="javascript:void(0)"  name="delete" onclick="ktg_delete('.$kategori->ktg_id.')"  id="'.$kategori->ktg_id.'" class=" btn btn-danger btn-xs update"> Delete </a>
+					<a href="javascript:void(0)" name="edit" onclick="ktg_edit('.$kategori->ktg_id.')"  id="'.$kategori->ktg_id.'" class="btn btn-primary" >Edit</a>';
             $data[] = $row;
         }
  
@@ -59,9 +69,29 @@ class Kategori extends CI_Controller {
 
 
     public function ktg_delete($ktg_id){
-    	$this->m_kategori->ktg_delete_by($ktg_id);
+    	$this->m_kategori->delete($ktg_id);
     	echo json_encode(array('status'=>TRUE));
-    }
+	}
+
+	public function update_view($ktg_id){
+		$getById=$this->m_kategori->getById($ktg_id);
+		// $this->load->view('kategori', $getById);
+		
+		// return $getById;
+		echo json_encode($getById);
+	}
+	
+	public function update(){
+		$data=[
+			"ktg_id"=>$this->input->post('ktg_id_edit'),
+			"ktg_nama"=>$this->input->post('ktg_nama_edit'),
+			"ktg_ket"=>$this->input->post('ktg_ket_edit')
+		];
+
+		$update=$this->m_kategori->update($data);
+		echo json_encode($update);
+	}
+
 
 
 

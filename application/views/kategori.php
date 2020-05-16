@@ -58,6 +58,41 @@
             </table>
 		</div><!--close tag id=ktg_select -->
 
+		<!-- modal edit kategori -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title center" id="exampleModalLabel">==Form Edit Kategori==</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+								<form id="frm_kategori_edit">
+									<input type="text" id="ktg_id_edit">
+									<div class="form-group row">
+										<label for="inputPassword" class="col-sm-2 col-form-label">Nama Kategori</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control clean" id="ktg_nama_edit" name="ktg_nama_edit" placeholder="Nama Kategori">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="inputPassword" class="col-sm-2 col-form-label">Keterangan</label>
+										<div class="col-sm-9">
+										<textarea  name="ktg_ket_edit" class="form-control clean" id="ktg_ket_edit" placeholder="Keterangan"></textarea>
+										</div>
+									</div>								
+							</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="ktg_save_edit">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 </body>

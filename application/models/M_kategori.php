@@ -7,10 +7,11 @@ class M_kategori extends CI_Model {
     var $column_search = array('ktg_nama'); //set column field database for datatable searchable 
     var $order = array('ktg_id' => 'asc'); // default order 
 
-	public function mktg_insert($data){
-		$insert=$this->db->insert($this->table, $data);
-		return $insert;
-	}
+    var $ktg_id="ktg_id";
+    var $ktg_nama="ktg_nama";
+    var $ktg_ket="ktg_ket";
+
+	
 
 	// public function mktg_select(){
 	// 	$select=$this->db->get($this->table);
@@ -85,10 +86,37 @@ class M_kategori extends CI_Model {
         return $this->db->count_all_results();
     }
 
-    public function ktg_delete_by($ktg_id){
-    	$this->db->where('ktg_id', $ktg_id);
-    	$this->db->delete($this->table);
+    public function insert($data){
+		$insert=$this->db->insert($this->table, $data);
+		return $insert;
+	}
+    public function getAll(){
+        return $this->db->get($this->table)->result_array();
     }
+    public function getById($ktg_id){
+        return $this->db->get_where($this->table,['ktg_id'=>$ktg_id])->result();
+    }
+
+    public function save(){
+        $post=$this->input->post();
+        $this->ktg_id=$post['ktg_id'];
+        $this->ktg_nama=$post['ktg_nama'];
+        $this->ktg_ket=$post['ktg_ket'];
+        $this->db->insert($this->table,$this);
+    }
+
+    public function update($data){
+        $this->db->update($this->table,$data,array('ktg_id'=>$data['ktg_id']));
+    }
+
+    public function delete($ktg_id){
+        return $this->db->delete($this->table,array("ktg_id"=>$ktg_id));
+    }
+
+
+
+
+   
 }
 
 /* End of file M_kategori.php */
