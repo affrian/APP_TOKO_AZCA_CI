@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/template/images/favicon.png'); ?>" />
     <link rel="stylesheet" href="<?php echo base_url('assets/datatables/media/css/dataTables.jqueryui.min.css'); ?>" /> 
     <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap-4.0.0/css/bootstrap.min.css') ?>">
-    
+    <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome-free-5.13.0-web/css/all.min.css') ?>">
+    <!--font awesome  -->
   </head>
   <body>
     <link rel="stylesheet" id="url" href="<?php echo base_url() ?>">
@@ -123,9 +124,9 @@
       </nav>
       <!-- partial -->
 
-      <div class="container-fluid page-body-wrapper">
+      <div class="container-fluid page-body-wrapper "  style="padding-left:0 !important">
         <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" style="">
           <ul class="nav">
             <li class="nav-item nav-profile">
               <a href="<?php echo base_url('dashboard'); ?>" class="nav-link">
@@ -271,13 +272,5 @@
     <!-- End custom js for this page -->
     <!-- new js -->
     <script src="<?php echo base_url('assets/js/customjs.js'); ?>"></script>
-
-    
-<!--     <script type="text/javascript" >
-      $(document).ready(function() {
-        // alert("test");  
-        $('#ktg_table').dataTable();
-      });  
-    </script> -->
   </body>
 </html>

@@ -11,20 +11,6 @@ class M_kategori extends CI_Model {
     var $ktg_nama="ktg_nama";
     var $ktg_ket="ktg_ket";
 
-	
-
-	// public function mktg_select(){
-	// 	$select=$this->db->get($this->table);
-	// 		foreach ($select->result() as $row)
-	// 		{
-	// 			echo $row->ktg_id;
- //        		echo $row->ktg_nama;
- //        		echo $row->ktg_ket;
-	// 		}
-	// 	return $select;
-	// }
-	
-
 	private function _get_datatables_query()
     {
          
@@ -97,16 +83,8 @@ class M_kategori extends CI_Model {
         return $this->db->get_where($this->table,['ktg_id'=>$ktg_id])->result();
     }
 
-    public function save(){
-        $post=$this->input->post();
-        $this->ktg_id=$post['ktg_id'];
-        $this->ktg_nama=$post['ktg_nama'];
-        $this->ktg_ket=$post['ktg_ket'];
-        $this->db->insert($this->table,$this);
-    }
-
-    public function update($data){
-        $this->db->update($this->table,$data,array('ktg_id'=>$data['ktg_id']));
+    public function update($data,$ktg_id){
+        $this->db->update($this->table,$data,array('ktg_id'=>$ktg_id));
     }
 
     public function delete($ktg_id){

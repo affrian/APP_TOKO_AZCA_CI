@@ -34,7 +34,7 @@ $("#ktgbtn_simpan").click(function(event) {
 			data:frm_kategori,
 			cache:true,
 			success:function(html){
-				alert('success!!');
+				// alert('success!!');
 				$(".clean").val('');
 				location.reload();
 			}
@@ -70,7 +70,7 @@ $('#ktg_table').dataTable({
 
 	$("#ktg_save_edit").click(function(event){
 			frm_kategori_edit=$('#frm_kategori_edit').serialize();
-			console.log(frm_kategori_edit);
+			// console.log(frm_kategori_edit);
 			ktg_id_edit=$("#ktg_id_edit").val();
 
 			$.ajax({
@@ -79,7 +79,8 @@ $('#ktg_table').dataTable({
 				data:frm_kategori_edit,
 				cache:true,
 				success:function(html){
-					alert('success!!');
+					console.log(html);
+					// alert('success!!');
 					$(".clean").val('');
 					location.reload();
 				}
@@ -109,7 +110,7 @@ $('#ktg_table').dataTable({
 	}
 
 	function ktg_edit(id){
-			alert(id);
+			// alert(id);
 			$("#ktg_id_edit").val(id);
 			var url=$('#url').attr('href');
 			$.ajax({
@@ -117,7 +118,7 @@ $('#ktg_table').dataTable({
 				type: 'POST',
 				dataType: 'JSON',
 				success:function(html){
-					console.log(html);
+					// console.log(html);
 					$("#exampleModal").modal('show');
 					$("#ktg_nama_edit").val(html[0].ktg_nama);
 					$("#ktg_ket_edit").val(html[0].ktg_ket);

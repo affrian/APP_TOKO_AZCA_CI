@@ -70,7 +70,7 @@
 					</div>
 					<div class="modal-body">
 								<form id="frm_kategori_edit">
-									<input type="text" id="ktg_id_edit">
+									<input type="text" name='ktg_id_edit' id="ktg_id_edit" hidden>
 									<div class="form-group row">
 										<label for="inputPassword" class="col-sm-2 col-form-label">Nama Kategori</label>
 										<div class="col-sm-9">

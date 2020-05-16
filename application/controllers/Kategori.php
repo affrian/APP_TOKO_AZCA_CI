@@ -3,17 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Kategori extends CI_Controller {
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 		$this->load->model('m_kategori');
 	}
 
-	public function index()
-	{
+	public function index(){
 		$data['page']='kategori';
 		$this->load->view('home', $data);	
-		
 	}
 
 	public function insert(){
@@ -21,9 +18,7 @@ class Kategori extends CI_Controller {
 			'ktg_id'=>'',
 		    'ktg_nama' =>$this->input->post('ktg_nama'),
 		    'ktg_ket' =>$this->input->post('ktg_ket')
-
 		];
-
 		$data=$this->m_kategori->insert($data);
 		echo json_encode($data);
 	}
@@ -31,18 +26,10 @@ class Kategori extends CI_Controller {
 	public function view(){
 		$data['kategori']=$this->m_kategori->getAll();
 		$this->load->view('kategori',$data);
-		
 		// echo json_encode($data);
-		
 	}
 
-	// public function cktg_select(){
-	// 	$data=$this->m_kategori->mktg_select();
-	// 	echo json_encode($data);
-	// }
-
-	 public function ajax_list()
-    {
+	 public function ajax_list(){
         $list = $this->m_kategori->get_datatables();
         $data = array();
         $no = $_POST['start'];
@@ -52,8 +39,8 @@ class Kategori extends CI_Controller {
             $row[] = $no;
             $row[] = $kategori->ktg_nama;
             $row[] = $kategori->ktg_ket;
-			$row[] = '<a href="javascript:void(0)"  name="delete" onclick="ktg_delete('.$kategori->ktg_id.')"  id="'.$kategori->ktg_id.'" class=" btn btn-danger btn-xs update"> Delete </a>
-					<a href="javascript:void(0)" name="edit" onclick="ktg_edit('.$kategori->ktg_id.')"  id="'.$kategori->ktg_id.'" class="btn btn-primary" >Edit</a>';
+			$row[] = '<a href="javascript:void(0)"  name="delete" onclick="ktg_delete('.$kategori->ktg_id.')"  id="'.$kategori->ktg_id.'" class=" btn btn-danger btn-xs update"> <i class="fas fa-window-close"></i></a>
+					<a href="javascript:void(0)" name="edit" onclick="ktg_edit('.$kategori->ktg_id.')"  id="'.$kategori->ktg_id.'" class="btn btn-primary" ><i class="fas fa-edit"></i></a>';
             $data[] = $row;
         }
  
@@ -75,20 +62,17 @@ class Kategori extends CI_Controller {
 
 	public function update_view($ktg_id){
 		$getById=$this->m_kategori->getById($ktg_id);
-		// $this->load->view('kategori', $getById);
-		
-		// return $getById;
 		echo json_encode($getById);
 	}
 	
 	public function update(){
+		$ktg_id=$this->input->post('ktg_id_edit');
 		$data=[
-			"ktg_id"=>$this->input->post('ktg_id_edit'),
 			"ktg_nama"=>$this->input->post('ktg_nama_edit'),
 			"ktg_ket"=>$this->input->post('ktg_ket_edit')
 		];
 
-		$update=$this->m_kategori->update($data);
+		$update=$this->m_kategori->update($data,$ktg_id);
 		echo json_encode($update);
 	}
 
