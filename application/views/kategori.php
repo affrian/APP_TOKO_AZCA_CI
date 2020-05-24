@@ -8,17 +8,22 @@
 	<div class="kategori">
 		<h3 class="text-center">===FORM KATEGORI===</h3> <br />
 		<form id="frm_kategori">
+				<div class="form-group row">
+					<div class="col-sm-9 ">
+						<i class="ktg_success text-success"></i>
+					</div>
+				</div>
 		  <div class="form-group row">
 		    <label for="inputPassword" class="col-sm-2 col-form-label">Nama Kategori</label>
 		    <div class="col-sm-9">
-		      <input type="text" class="form-control clean" id="ktg_nama" name="ktg_nama" placeholder="Nama Kategori">
+		      <input type="text" class="form-control clean" id="ktg_nama" name="ktg_nama" placeholder="Nama Kategori" maxlength="20">
 		    </div>
 		  </div>
 
 		  <div class="form-group row">
 		    <label for="inputPassword" class="col-sm-2 col-form-label">Keterangan</label>
 		    <div class="col-sm-9">
-		    <textarea  name="ktg_ket" class="form-control clean" id="ktg_ket" placeholder="Keterangan"></textarea>
+		    <textarea  name="ktg_ket" class="form-control clean" id="ktg_ket" placeholder="Keterangan" maxlength="50"></textarea>
 		    </div>
 		  </div>
 
@@ -74,21 +79,21 @@
 									<div class="form-group row">
 										<label for="inputPassword" class="col-sm-2 col-form-label">Nama Kategori</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control clean" id="ktg_nama_edit" name="ktg_nama_edit" placeholder="Nama Kategori">
+											<input type="text" class="form-control clean" id="ktg_nama_edit" name="ktg_nama_edit" placeholder="Nama Kategori" maxlength="20">
 										</div>
 									</div>
 
 									<div class="form-group row">
 										<label for="inputPassword" class="col-sm-2 col-form-label">Keterangan</label>
 										<div class="col-sm-9">
-										<textarea  name="ktg_ket_edit" class="form-control clean" id="ktg_ket_edit" placeholder="Keterangan"></textarea>
+										<textarea  name="ktg_ket_edit" class="form-control clean" id="ktg_ket_edit" placeholder="Keterangan" maxlength="50"></textarea>
 										</div>
 									</div>								
 							</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" id="ktg_save_edit">Save changes</button>
+						<button type="button" class="btn btn-primary" id="ktg_save_edit" data-dismiss="modal">Save changes</button>
 					</div>
 				</div>
 			</div>

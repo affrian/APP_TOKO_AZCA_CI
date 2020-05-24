@@ -5,7 +5,7 @@ class M_kategori extends CI_Model {
 	var $table = 'tbl_kategori';
     var $column_order = array(null, 'ktg_nama','ktg_ket'); //set column field database for datatable orderable
     var $column_search = array('ktg_nama'); //set column field database for datatable searchable 
-    var $order = array('ktg_id' => 'asc'); // default order 
+    var $order = array('ktg_id' => 'desc'); // default order 
 
     var $ktg_id="ktg_id";
     var $ktg_nama="ktg_nama";

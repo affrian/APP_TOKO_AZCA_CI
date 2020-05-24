@@ -22,8 +22,10 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/template/images/favicon.png'); ?>" />
     <link rel="stylesheet" href="<?php echo base_url('assets/datatables/media/css/dataTables.jqueryui.min.css'); ?>" /> 
     <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap-4.0.0/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome-free-5.13.0-web/css/all.min.css') ?>">
-    <!--font awesome  -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome-free-5.13.0-web/css/all.min.css') ?>"><!--font awesome  -->
+    <!-- sweeetalert2 -->
+    <link rel="stylesheet" href="<?php base_url('assets/node_modules/dist/sweetalert2.min.css') ?>">
+    
   </head>
   <body>
     <link rel="stylesheet" id="url" href="<?php echo base_url() ?>">
@@ -261,7 +263,7 @@
     <script src="<?php echo base_url('assets/template/vendors/chart.js/Chart.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/template/vendors/moment/moment.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/template/vendors/daterangepicker/daterangepicker.js'); ?>"></script>
-    <!-- <script src="<?php echo base_url('assets/template/vendors/chartist/chartist.min.js'); ?>"></script> -->
+     
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="<?php echo base_url('assets/template/js/off-canvas.js'); ?>"></script>
@@ -272,5 +274,8 @@
     <!-- End custom js for this page -->
     <!-- new js -->
     <script src="<?php echo base_url('assets/js/customjs.js'); ?>"></script>
+
+    <!-- swwetalert2 js -->
+    <script src="<?php echo base_url('assets/node_modules/dist/sweetalert2.all.min.js'); ?>"></script>
   </body>
 </html>
