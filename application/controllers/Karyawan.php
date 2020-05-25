@@ -6,7 +6,7 @@ class Karyawan extends CI_Controller {
 	public function index()
 	{
 		$data['page']='karyawan';
-		$this->load->view('home', $data);		
+		$this->load->view('vhome', $data);		
 	}
 
 }

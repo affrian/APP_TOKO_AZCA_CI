@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Lokasi_brg extends CI_Controller {
+class Lokasi extends CI_Controller {
 
 	public function index()
 	{
-		$data['page']='lokasi_brg';
-		$this->load->view('home', $data);
+		$data['page']='vlokasi';
+		$this->load->view('vhome', $data);
 	}
 
 }

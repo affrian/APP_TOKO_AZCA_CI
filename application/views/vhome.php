@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>WR. Application</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/simple-line-icons/css/simple-line-icons.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/flag-icon-css/css/flag-icon.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/css/vendor.bundle.base.css'); ?>">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/daterangepicker/daterangepicker.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/chartist/chartist.min.css');?>">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/template/css/style.css'); ?>">
-    <!-- End layout styles -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/template/images/favicon.png'); ?>" />
-    <link rel="stylesheet" href="<?php echo base_url('assets/datatables/media/css/dataTables.jqueryui.min.css'); ?>" /> 
-    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap-4.0.0/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome-free-5.13.0-web/css/all.min.css') ?>"><!--font awesome  -->
-    <!-- sweeetalert2 -->
-    <link rel="stylesheet" href="<?php base_url('assets/node_modules/dist/sweetalert2.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/simple-line-icons/css/simple-line-icons.css'); ?>"><!-- simple-line-icons -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/flag-icon-css/css/flag-icon.min.css'); ?>"><!-- flag-icon -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/css/vendor.bundle.base.css'); ?>"><!--vendor.bundle.base  -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/daterangepicker/daterangepicker.css'); ?>"><!--daterangepicker  -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/template/vendors/chartist/chartist.min.css'); ?>"><!--chartist  -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/template/css/style.css'); ?>"><!-- style -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/template/images/favicon.png'); ?>" /><!--favicon  -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/datatables/media/css/dataTables.jqueryui.min.css'); ?>" /> <!-- dataTables.jqueryui -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap-4.0.0/css/bootstrap.min.css') ?>"><!-- bootstrap-4.0.0 -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome-free-5.13.0-web/css/all.min.css') ?>"><!--font awesome 5 -->
+    <link rel="stylesheet" href="<?php base_url('assets/node_modules/dist/sweetalert2.min.css') ?>"><!-- sweeetalert2 -->
     
   </head>
   <body>
@@ -60,7 +50,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="<?php echo base_url('assets/template/images/faces/face10.jpg')?>" alt="image" class="img-sm profile-pic"> </div>
+                    <img src="<?php echo base_url('assets/template/images/faces/face10.jpg') ?>" alt="image" class="img-sm profile-pic"> </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
                     <p class="font-weight-light small-text"> The meeting is cancelled </p>
@@ -68,7 +58,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="<?php echo base_url('assets/template/images/faces/face12.jpg');?>" alt="image" class="img-sm profile-pic"> </div>
+                    <img src="<?php echo base_url('assets/template/images/faces/face12.jpg'); ?>" alt="image" class="img-sm profile-pic"> </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
                     <p class="font-weight-light small-text"> The meeting is cancelled </p>
@@ -165,10 +155,9 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('kategori') ?>">Kategori Barang</a></li>
                      <!-- <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('multi_satuan') ?>">Barang Multi Satuan</a></li> -->
-                   <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('barang') ?>">Jenis-Jenis Barang</a></li>
-                    
                   <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('satuan') ?>">Satuan Barang</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('lokasi_brg') ?>">Lokasi Barang</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('lokasi') ?>">Lokasi Barang</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('barang') ?>">Nama Barang</a></li>
                 </ul>
               </div>
             </li>
@@ -231,12 +220,11 @@
           </ul>
         </nav>
 
-         <div class="main-panel">
+        <div class="main-panel">
           <div class="content-wrapper">
                 <?php $this->load->view($page); ?>
-
-               
           </div>
+
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
            <footer class="footer">
@@ -253,29 +241,17 @@
     </div>
     <!-- container-scroller -->
       
-      <script src="<?php echo base_url('assets/js/jquery-3.4.1.min.js'); ?>"></script>
-      <script src="<?php echo base_url('assets/datatables/media/js/jquery.dataTables.min.js'); ?>"></script>
-    <!-- plugins:js -->
-   <!--  <script src="<?php echo base_url('assets/template/vendors/js/vendor.bundle.base.js'); ?>"></script> -->
-   <script src="<?php echo base_url('assets/bootstrap-4.0.0/js/bootstrap.bundle.min.js'); ?>"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="<?php echo base_url('assets/template/vendors/chart.js/Chart.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/template/vendors/moment/moment.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/template/vendors/daterangepicker/daterangepicker.js'); ?>"></script>
-     
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="<?php echo base_url('assets/template/js/off-canvas.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/template/js/misc.js'); ?>"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <script src="<?php echo base_url('assets/template/js/dashboard.js'); ?>"></script>
-    <!-- End custom js for this page -->
-    <!-- new js -->
-    <script src="<?php echo base_url('assets/js/customjs.js'); ?>"></script>
-
-    <!-- swwetalert2 js -->
-    <script src="<?php echo base_url('assets/node_modules/dist/sweetalert2.all.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery-3.4.1.min.js'); ?>"></script><!-- jquery-3.4.1 -->
+    <script src="<?php echo base_url('assets/datatables/media/js/jquery.dataTables.min.js'); ?>"></script><!-- DataTables -->
+    <!-- <script src="<?php echo base_url('assets/template/vendors/js/vendor.bundle.base.js'); ?>"></script> -->
+    <script src="<?php echo base_url('assets/bootstrap-4.0.0/js/bootstrap.bundle.min.js'); ?>"></script><!-- Bootstrap 4.0.0 -->
+    <script src="<?php echo base_url('assets/template/vendors/chart.js/Chart.min.js'); ?>"></script><!-- Chart.min.js-->
+    <script src="<?php echo base_url('assets/template/vendors/moment/moment.min.js'); ?>"></script><!-- moment.min.js-->
+    <script src="<?php echo base_url('assets/template/vendors/daterangepicker/daterangepicker.js'); ?>"></script><!-- daterangepicker.js-->
+    <script src="<?php echo base_url('assets/template/js/off-canvas.js'); ?>"></script> <!-- off-canvas.js -->
+    <script src="<?php echo base_url('assets/template/js/misc.js'); ?>"></script><!-- misc.js -->
+    <script src="<?php echo base_url('assets/template/js/dashboard.js'); ?>"></script><!--dashboard.js -->
+    <script src="<?php echo base_url('assets/js/customjs.js'); ?>"></script><!--customjs.js -->
+    <script src="<?php echo base_url('assets/node_modules/dist/sweetalert2.all.min.js'); ?>"></script> <!-- swwetalert2 js -->
   </body>
 </html>

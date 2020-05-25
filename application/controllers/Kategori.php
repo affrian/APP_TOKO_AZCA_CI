@@ -9,8 +9,8 @@ class Kategori extends CI_Controller {
 	}
 
 	public function index(){
-		$data['page']='kategori';
-		$this->load->view('home', $data);	
+		$data['page']='vkategori';
+		$this->load->view('vhome', $data);	
 	}
 
 	public function insert(){
@@ -25,7 +25,7 @@ class Kategori extends CI_Controller {
 
 	public function view(){
 		$data['kategori']=$this->m_kategori->getAll();
-		$this->load->view('kategori',$data);
+		$this->load->view('vkategori',$data);
 		// echo json_encode($data);
 	}
 

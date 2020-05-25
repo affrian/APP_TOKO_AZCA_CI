@@ -6,7 +6,7 @@ class Dashboard extends CI_Controller {
 		// $data adalah variabel yang akan dkirim ke view,
 		//  page adalah array yang akan ditangkap oleh view,
 		//  dashboard adalah nama view
-		$data['page']='dashboard';
-		$this->load->view('home',$data);
+		$data['page']='vdashboard';
+		$this->load->view('vhome',$data);
 	}
 }

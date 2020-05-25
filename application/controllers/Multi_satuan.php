@@ -6,7 +6,7 @@ class Multi_satuan extends CI_Controller {
 	public function index()
 	{
 		$data['page']='multi_satuan';
-		$this->load->view('home',$data);
+		$this->load->view('vhome',$data);
 
 	}
 
